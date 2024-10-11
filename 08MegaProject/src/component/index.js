@@ -13,7 +13,20 @@ import PostForm from "./PostForm/PostForm";
 import AuthLayout from './AuthLayout'
 import Login from "./Login";
 import Signup from './Signup'
-import Post from "../pages/Post";
+
 export {
-    Header,Footer,Container,Logo,LogoutBtn,Login,Select,PostCard,Input,Button,RTE,PostForm,AuthLayout,Signup,Post
+    Header,
+    Footer,
+    Container,
+    Logo,
+    LogoutBtn,
+    Login,
+    Select,
+    PostCard,
+    Input,
+    Button,
+    RTE,
+    PostForm,
+    AuthLayout,
+    Signup,
 }

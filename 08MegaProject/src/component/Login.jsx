@@ -12,6 +12,7 @@ function Login() {
     const [error, setError] = useState(null);
 
     const login = async (data) => {
+        console.log("lohgi    hhhhh hhgggcgx",data)
         setError("")
         try {
             const session = await authService.login(data)
@@ -66,10 +67,6 @@ function Login() {
                             type="password"
                             {...register("password", {
                                 required: true,
-                                validate: {
-                                    matchPatern: (value) => /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value) ||
-                                        "Password must be at least 8 characters, contain at least one uppercase letter, one lowercase"
-                                }
                             })}
 
                         />

@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input, Select, RTE } from '../index'
-import { Service } from "../../AppWrite/config";
+import appwriteService from '../../AppWrite/config'
 import { createRoutesFromChildren, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 
@@ -17,7 +17,7 @@ function PostForm({ post }) {
     })
 
     const navigate = useNavigate()
-    const userData = useSelector(state => state.user.userData)
+    // const userData = useSelector(state => state.auth.userData)
     
     const submit = async (data) => {
         if (post) {
@@ -38,7 +38,7 @@ function PostForm({ post }) {
             if (file) {
                 const fileId = file.$id
                 data.featuredImage = fileId
-                const dbPost = await appwriteService.createPoat({
+                const dbPost = await appwriteService.createPost({
                     ...data,
                     userId: userData.$id,
                 })

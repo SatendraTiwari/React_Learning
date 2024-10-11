@@ -6,13 +6,14 @@ import { Provider } from 'react-redux'
 import store from './store/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import { AuthLayout} from './component/index.js'
+import {AuthLayout} from './component/index.js'
 
-
+import Protected from './component/AuthLayout.jsx'
 import AddPost from "./pages/AddPost";
 import Signup from './pages/Signup'
 import EditPost from "./pages/EditPost";
 import Login from './pages/Login.jsx'
+
 import Post from "./pages/Post";
 
 import AllPosts from './pages/AllPost.jsx'
@@ -20,7 +21,7 @@ import AllPosts from './pages/AllPost.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element:<App /> ,
     children: [
         {
             path: "/",
@@ -29,35 +30,25 @@ const router = createBrowserRouter([
         {
             path: "/login",
             element: (
-                <AuthLayout authentication>
-                    <Login />
-                </AuthLayout>
+                <Login/>
             ),
         },
         {
             path: "/signup",
             element: (
-                <AuthLayout authentication={false}>
-                    <Signup />
-                </AuthLayout>
+                <Signup />
             ),
         },
         {
             path: "/all-posts",
             element: (
-                <AuthLayout authentication>
-                    {" "}
-                    <AllPosts />
-                </AuthLayout>
+                <AllPosts/>
             ),
         },
         {
             path: "/add-post",
-            element: (
-                <AuthLayout authentication>
-                    {" "}
+            element: (  
                     <AddPost />
-                </AuthLayout>
             ),
         },
         {
@@ -82,5 +73,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
     <RouterProvider router={router}/>
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

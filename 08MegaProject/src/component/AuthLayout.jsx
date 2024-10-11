@@ -8,7 +8,7 @@ export default function Protected({ childran, authentication = true }) {
 
     useEffect(() => {
         if (authentication && authStatus !== authentication) {
-            navigate("/login")
+            navigate("/login")           
         } else if (!authentication && authStatus !== authentication) {
             navigate("/")
         }
