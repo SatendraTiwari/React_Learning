@@ -14,11 +14,13 @@ function App() {
          style={{backgroundColor: 'red'}}>Red</button>
 
          {/* Second Button */}
-        <button  className='outline-none px-4 py-1 rounded-2xl text-white shadow-lg'
+        <button onClick={() => setColor("green")}
+          className='outline-none px-4 py-1 rounded-2xl text-white shadow-lg'
          style={{backgroundColor: 'green'}}>green</button>
 
          {/* third button */}
-         <button  className='outline-none px-4 py-1 rounded-2xl text-white shadow-lg'
+         <button onClick={() => setColor("orange")}
+           className='outline-none px-4 py-1 rounded-2xl text-white shadow-lg'
          style={{backgroundColor: 'orange'}}>orange</button>
       </div>
       </div>

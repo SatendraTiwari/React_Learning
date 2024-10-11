@@ -19,7 +19,7 @@ function Hooks(){
   const DecValue = () =>{
     console.log("clicked",counter)
     counter = counter - 1
-    setCounterss(counter)
+    setCounters(counter)
   }
 
   return (
